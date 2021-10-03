@@ -1,4 +1,8 @@
 # tk-yolov5-tracking
+## Versions
+- python 3.8.1
+- pytorch 1.9.1+cu102
+- tkinter 8.6.10
 
 # abstract: multi-thread with yolov5-thread and tkinter-thread
 
