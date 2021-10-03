@@ -1,4 +1,4 @@
-# tk-yolov5-tracking
+# tk-yolov5-deepsort-tracking
 ## Versions
 - python 3.8.1
 - pytorch 1.9.1+cu102
