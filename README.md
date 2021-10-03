@@ -3,6 +3,7 @@
 # abstract: multi-thread with yolov5-thread and tkinter-thread
 
 working yolov5-thread and tkinter-thread as multithread on Mac. overall stracture is bellow.
+<img src="https://user-images.githubusercontent.com/48679574/135762367-b2045111-4764-4518-90b2-6fc668f039a4.png" width="600px">
 
 
 - [yolov5 pretrained weight](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiMn431za7zAhU0yosBHVh9CbEQFnoECAIQAQ&url=https%3A%2F%2Fgithub.com%2Fultralytics%2Fyolov5%2Freleases%2Fdownload%2Fv4.0%2Fyolov5s.pt&usg=AOvVaw2MEXDNRJv1NASj6H-3qBQY)
