@@ -18,7 +18,9 @@ working yolov5-thread and tkinter-thread as multithread on Mac. overall stractur
 # Deepsort tracking
 
 DeepSort is popular tracking algrism, often using with object detection.
-<img src="https://user-images.githubusercontent.com/48679574/135762464-b10bb172-7364-484f-bb7b-3f65fbf55dcc.jpeg" width="400px">
+
+
+<img src="https://user-images.githubusercontent.com/48679574/135762464-b10bb172-7364-484f-bb7b-3f65fbf55dcc.jpeg" width="500px">
 
 
 # how to start
