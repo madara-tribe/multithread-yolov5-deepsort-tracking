@@ -20,7 +20,7 @@ from Deepsort.utils.parser import get_config
 from Deepsort.deep_sort.deep_sort import DeepSort
 
 
-def preprocess_img(img, device, half=False):
+def preprocess_img(img, device, half):
     img = torch.from_numpy(img).to(device)
     img = img.half() if half else img.float()  # uint8 to fp16/32
     img = img / 255.0  # 0 - 255 to 0.0 - 1.0
@@ -28,7 +28,7 @@ def preprocess_img(img, device, half=False):
         img = img[None]  # expand for batch dim
     return img
 
-def load_model(weights, device, half=False):
+def load_model(weights, device, half):
     global deepsort
     cfg = get_config()
     cfg.merge_from_file('Deepsort/configs/deep_sort.yaml')
@@ -45,10 +45,9 @@ def load_model(weights, device, half=False):
 def initialize():
     global device
     global half # use FP16 half-precision inference
-    device=''
     half = False
+    device=''
     device = select_device(device)
-    half &= device.type != 'cpu'  # half precision only supported on CUDA
 
 def deepsort_detection(annotator, det, img, im0, names, s):
     if det is not None and len(det):
@@ -107,7 +106,7 @@ def yolov5_detection(q:Queue, opt, save_vid=False, show_vid=False, tkinter_is=Fa
     pt, onnx, tflite, pb, saved_model = (suffix == x for x in suffixes)  # backend booleans
     stride, names = 64, [f'class{i}' for i in range(1000)]  # assign defaults
     
-    yolov5 = load_model(weights, device, half=False)
+    yolov5 = load_model(weights, device, half=half)
     stride = int(yolov5.stride.max())  # model stride
     names = yolov5.module.names if hasattr(yolov5, 'module') else yolov5.names  # get class names
     
