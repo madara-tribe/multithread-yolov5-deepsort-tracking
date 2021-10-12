@@ -45,9 +45,18 @@ def load_model(weights, device, half):
 def initialize():
     global device
     global half # use FP16 half-precision inference
+    global vid_write
     half = False
     device=''
     device = select_device(device)
+    
+    # camera init
+    fps = 10 #int(cap.get(cv2.CAP_PROP_FPS))
+    w = 1280
+    h = 720
+    fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
+    vid_write = cv2.VideoWriter('output.mp4', fourcc, fps, (w, h))
+
 
 def deepsort_detection(annotator, det, img, im0, names, s):
     if det is not None and len(det):
@@ -157,18 +166,10 @@ def yolov5_detection(q:Queue, opt, save_vid=False, show_vid=False, tkinter_is=Fa
 
             # Save results (image with detections)
             elif save_vid:
-                vid_path = save_path
-                if isinstance(vid_writer, cv2.VideoWriter):
-                    vid_writer.release()  # release previous video writer
-                if vid_cap:  # video
-                    fps = vid_cap.get(cv2.CAP_PROP_FPS)
-                    w = int(vid_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-                    h = int(vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-                else:  # stream
-                    fps, w, h = 30, im0.shape[1], im0.shape[0]
-                    save_path += '.mp4'
-
-                vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))
+                im_rgb = cv2.cvtColor(im0, cv2.COLOR_BGR2RGB)
+                im_rgb = cv2.resize(im_rgb, (1280, 720))
+                vid_write.write(im_rgb.astype(np.uint8))
+                
             elif tkinter_is:
                 im_rgb = cv2.cvtColor(im0, cv2.COLOR_BGR2RGB)
                 im_rgb = cv2.resize(im_rgb, (1280, 720))
