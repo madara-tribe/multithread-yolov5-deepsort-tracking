@@ -173,8 +173,10 @@ def yolov5_detection(q:Queue, opt, save_vid=False, show_vid=False, tkinter_is=Fa
                 im_rgb = cv2.cvtColor(im0, cv2.COLOR_BGR2RGB)
                 im_rgb = cv2.resize(im_rgb, (1280, 720))
                 q.put(im_rgb)
-
+                
     print('Done. (%.3fs)' % (time.time() - t0))
+    vid_write.release()
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     q = Queue()
