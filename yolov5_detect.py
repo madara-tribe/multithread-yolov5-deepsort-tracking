@@ -166,8 +166,7 @@ def yolov5_detection(q:Queue, opt, save_vid=False, show_vid=False, tkinter_is=Fa
 
             # Save results (image with detections)
             elif save_vid:
-                im_rgb = cv2.cvtColor(im0, cv2.COLOR_BGR2RGB)
-                im_rgb = cv2.resize(im_rgb, (1280, 720))
+                im_rgb = cv2.resize(im0, (1280, 720))
                 vid_write.write(im_rgb.astype(np.uint8))
                 
             elif tkinter_is:
