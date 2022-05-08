@@ -1,4 +1,5 @@
-# tk-yolov5-deepsort-tracking
+# pretrained yolov5 deepsort tracking monitor for IOT
+
 ## Versions
 - python 3.8.1
 - pytorch 1.9.1+cu102
