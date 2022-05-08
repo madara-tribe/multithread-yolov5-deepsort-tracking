@@ -4,6 +4,18 @@
 - pytorch 1.9.1+cu102
 - tkinter 8.6.10
 
+## Setup with conda env
+```zsh
+# create new env
+$ conda create -n <env name> python=<python version> anaconda
+# install pytorch and pkgs
+$ pip3 install -r requirements.txt
+
+# when remove
+$ conda remove -n <env name> --all
+```
+
+
 # abstract: multi-thread with yolov5-thread and tkinter-thread
 
 working yolov5-thread and tkinter-thread as multithread on Mac. overall stracture is bellow.
