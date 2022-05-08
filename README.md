@@ -4,7 +4,7 @@
 - pytorch 1.9.1+cu102
 - tkinter 8.6.10
 
-## Setup with conda env
+## Setup env on Mac with conda
 ```zsh
 # create new env
 $ conda create -n <env name> python=<python version> anaconda
