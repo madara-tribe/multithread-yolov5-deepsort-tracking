@@ -42,12 +42,7 @@ DeepSort is popular tracking algrism, often using with object detection.
 
 # how to start
 
-if you just detct by yolov5. it can move in Docker.
-```
-$ python3 yolov5_detect.py
-```
-
-if you move mutithread. it can be moved on like Mac, because it use tkinter.
+With mutithread, it can be moved on like Mac, because it use tkinter.
 ```
 $ python3 multithread_tkapp.py 
 ```
