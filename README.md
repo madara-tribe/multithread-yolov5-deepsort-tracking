@@ -1,4 +1,4 @@
-# pretrained yolov5 deepsort tracking monitor for IOT
+# pretrained yolov5 deepsort tracking with multithread
 
 ## Versions
 - python 3.8.1
